@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.weather.weatherapp.Welcome">
+   <children>
+      <ImageView fitHeight="1080.0" fitWidth="1920.0" opacity="0.55" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@cloudy.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="184.0" layoutY="216.0" text="Weather Forecast" textFill="WHITE">
+         <font>
+            <Font name="Commercial Pi BT" size="200.0" />
+         </font>
+      </Label>
+      <Button fx:id="enter_button" layoutX="785.0" layoutY="624.0" mnemonicParsing="false" prefHeight="97.0" prefWidth="351.0" style="-fx-background-radius: 40; -fx-background-color: #3a5e78;" text="Enter" textFill="WHITE">
+         <font>
+            <Font name="Corbel Bold" size="55.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+</AnchorPane>

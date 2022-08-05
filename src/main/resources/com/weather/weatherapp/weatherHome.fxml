@@ -1,0 +1,1447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.weather.weatherapp.WeatherHome">
+   <children>
+      <ImageView fx:id="background_image" fitHeight="1080.0" fitWidth="1920.0" opacity="0.55" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@clear.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane prefHeight="1080.0" prefWidth="1920.0">
+         <children>
+            <TextField fx:id="search_text_field" layoutX="780.0" layoutY="304.0" prefHeight="40.0" prefWidth="360.0" promptText="Search By Address, City, or Postal Code " style="-fx-background-radius: 20;">
+               <font>
+                  <Font name="Calibri Light" size="20.0" />
+               </font>
+            </TextField>
+            <Pane layoutX="1169.0" layoutY="305.0" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: white; -fx-background-radius: 20;" />
+            <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="1172.0" layoutY="307.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icons8-magnifying-glass-64.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="search_button" layoutX="1169.0" layoutY="305.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: transparent; -fx-background-radius: 20;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <VBox alignment="CENTER" layoutX="408.0" layoutY="389.0" prefHeight="327.0" prefWidth="703.0">
+               <children>
+                  <Text fx:id="location_text" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Los Angeles, CA, United States  ">
+                     <font>
+                        <Font name="CityBlueprint" size="50.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="curr_temp" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="98">
+                     <font>
+                        <Font name="Arial Bold" size="180.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="-25.0" top="30.0" />
+                     </VBox.margin>
+                  </Text>
+                  <HBox alignment="CENTER" prefHeight="40.0" prefWidth="200.0">
+                     <children>
+                        <Text fill="WHITE" opacity="0.5" strokeType="OUTSIDE" strokeWidth="0.0" text="Feels Like">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </Text>
+                        <Text fx:id="feels_like_text" fill="WHITE" opacity="0.5" strokeType="OUTSIDE" strokeWidth="0.0" text="100">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="75.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <ImageView fx:id="curr_weather_icon" fitHeight="200.0" fitWidth="200.0" layoutX="940.0" layoutY="505.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@rain.gif" />
+               </image></ImageView>
+            <GridPane layoutX="480.0" layoutY="530.0" prefHeight="75.0" prefWidth="142.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="44.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="29.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Text fx:id="feelsLike1" fill="WHITE" opacity="0.5" strokeType="OUTSIDE" strokeWidth="0.0" text="High:">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="max_text" fill="WHITE" opacity="0.5" strokeType="OUTSIDE" strokeWidth="0.0" text="Max" GridPane.columnIndex="1">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="feelsLike2" fill="WHITE" opacity="0.5" strokeType="OUTSIDE" strokeWidth="0.0" text="Low:" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="min_text" fill="WHITE" opacity="0.5" strokeType="OUTSIDE" strokeWidth="0.0" text="Min" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+               </children>
+            </GridPane>
+            <VBox alignment="CENTER" layoutX="86.0" layoutY="398.0" prefHeight="250.0" prefWidth="180.0">
+               <children>
+                  <Text fx:id="curr_day_text" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Day">
+                     <font>
+                        <Font name="CityBlueprint" size="50.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="25.0" top="-25.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Text fx:id="date_text" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
+                     <font>
+                        <Font name="CityBlueprint" size="50.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="25.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Text fx:id="time_text" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Time">
+                     <font>
+                        <Font name="CityBlueprint" size="50.0" />
+                     </font>
+                  </Text>
+               </children>
+            </VBox>
+            <ScrollPane fx:id="daily_scroll" layoutX="340.0" layoutY="729.0" prefHeight="265.0" prefWidth="950.0" style="-fx-background-color: transparent;" stylesheets="@scroll_pane.css">
+               <content>
+                  <HBox prefHeight="250.0" prefWidth="1900.0" style="-fx-background-color: transparent;">
+                     <children>
+                        <AnchorPane prefHeight="250.0" prefWidth="180.0" style="-fx-background-color: #1f1f1f9d; -fx-background-radius: 30;">
+                           <children>
+                              <ImageView fx:id="weather_icon1" fitHeight="80.0" fitWidth="80.0" layoutX="50.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" />
+                              <VBox alignment="CENTER" prefHeight="91.0" prefWidth="180.0">
+                                 <children>
+                                    <Text fx:id="day_text1" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Day">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="25.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                    <Text fx:id="date_text1" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="18.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                              <GridPane alignment="CENTER_RIGHT" layoutY="160.0" prefHeight="90.0" prefWidth="180.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Max:">
+                                             <font>
+                                                <Font name="ArtifaktElement-Regular" size="14.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <Text fx:id="max_temp1" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="max">
+                                             <font>
+                                                <Font name="ArtifaktElement-Regular" size="14.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                       <children>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Min:">
+                                             <font>
+                                                <Font name="ArtifaktElement-Regular" size="14.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <Text fx:id="min_temp1" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="min">
+                                             <font>
+                                                <Font name="ArtifaktElement-Regular" size="14.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </HBox>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Sunrise:" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="14.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="25.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Sunset:" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="14.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="25.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text fx:id="sunrise_time1" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="sunrise" wrappingWidth="48.66400146484375" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="14.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="25.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text fx:id="sunset_time1" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="sunset" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="14.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="25.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                 </children>
+                              </GridPane>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="250.0" prefWidth="180.0" style="-fx-background-color: #1f1f1f9d; -fx-background-radius: 30;">
+                           <children>
+                              <ImageView fx:id="weather_icon2" fitHeight="80.0" fitWidth="80.0" layoutX="50.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" />
+                              <VBox alignment="CENTER" prefHeight="91.0" prefWidth="180.0">
+                                 <children>
+                                    <Text fx:id="day_text2" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Day">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="25.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                    <Text fx:id="date_text2" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="18.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                              <GridPane alignment="CENTER_RIGHT" layoutY="160.0" prefHeight="90.0" prefWidth="180.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Max:">
+                                             <font>
+                                                <Font name="ArtifaktElement-Regular" size="14.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <Text fx:id="max_temp2" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="max">
+                                             <font>
+                                                <Font name="ArtifaktElement-Regular" size="14.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                       <children>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Min:">
+                                             <font>
+                                                <Font name="ArtifaktElement-Regular" size="14.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <Text fx:id="min_temp2" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="min">
+                                             <font>
+                                                <Font name="ArtifaktElement-Regular" size="14.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </HBox>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Sunrise:" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="14.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="25.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Sunset:" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="14.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="25.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text fx:id="sunrise_time2" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="sunrise" wrappingWidth="48.66400146484375" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="14.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="25.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text fx:id="sunset_time2" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="sunset" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="14.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="25.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                 </children>
+                              </GridPane>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="250.0" prefWidth="180.0" style="-fx-background-color: #1f1f1f9d; -fx-background-radius: 30;">
+                           <children>
+                              <ImageView fx:id="weather_icon3" fitHeight="80.0" fitWidth="80.0" layoutX="50.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" />
+                              <VBox alignment="CENTER" prefHeight="91.0" prefWidth="180.0">
+                                 <children>
+                                    <Text fx:id="day_text3" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Day">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="25.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                    <Text fx:id="date_text3" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="18.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                              <GridPane alignment="CENTER_RIGHT" layoutY="160.0" prefHeight="90.0" prefWidth="180.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Max:">
+                                             <font>
+                                                <Font name="ArtifaktElement-Regular" size="14.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <Text fx:id="max_temp3" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="max">
+                                             <font>
+                                                <Font name="ArtifaktElement-Regular" size="14.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                       <children>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Min:">
+                                             <font>
+                                                <Font name="ArtifaktElement-Regular" size="14.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <Text fx:id="min_temp3" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="min">
+                                             <font>
+                                                <Font name="ArtifaktElement-Regular" size="14.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </HBox>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Sunrise:" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="14.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="25.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Sunset:" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="14.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="25.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text fx:id="sunrise_time3" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="sunrise" wrappingWidth="48.66400146484375" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="14.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="25.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text fx:id="sunset_time3" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="sunset" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="14.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="25.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                 </children>
+                              </GridPane>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="250.0" prefWidth="180.0" style="-fx-background-color: #1f1f1f9d; -fx-background-radius: 30;">
+                           <children>
+                              <ImageView fx:id="weather_icon4" fitHeight="80.0" fitWidth="80.0" layoutX="50.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" />
+                              <VBox alignment="CENTER" prefHeight="91.0" prefWidth="180.0">
+                                 <children>
+                                    <Text fx:id="day_text4" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Day">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="25.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                    <Text fx:id="date_text4" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="18.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                              <GridPane alignment="CENTER_RIGHT" layoutY="160.0" prefHeight="90.0" prefWidth="180.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Max:">
+                                             <font>
+                                                <Font name="ArtifaktElement-Regular" size="14.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <Text fx:id="max_temp4" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="max">
+                                             <font>
+                                                <Font name="ArtifaktElement-Regular" size="14.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                       <children>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Min:">
+                                             <font>
+                                                <Font name="ArtifaktElement-Regular" size="14.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <Text fx:id="min_temp4" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="min">
+                                             <font>
+                                                <Font name="ArtifaktElement-Regular" size="14.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </HBox>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Sunrise:" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="14.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="25.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Sunset:" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="14.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="25.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text fx:id="sunrise_time4" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="sunrise" wrappingWidth="48.66400146484375" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="14.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="25.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text fx:id="sunset_time4" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="sunset" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="14.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="25.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                 </children>
+                              </GridPane>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="250.0" prefWidth="180.0" style="-fx-background-color: #1f1f1f9d; -fx-background-radius: 30;">
+                           <children>
+                              <ImageView fx:id="weather_icon5" fitHeight="80.0" fitWidth="80.0" layoutX="50.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" />
+                              <VBox alignment="CENTER" prefHeight="91.0" prefWidth="180.0">
+                                 <children>
+                                    <Text fx:id="day_text5" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Day">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="25.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                    <Text fx:id="date_text5" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="18.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                              <GridPane alignment="CENTER_RIGHT" layoutY="160.0" prefHeight="90.0" prefWidth="180.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Max:">
+                                             <font>
+                                                <Font name="ArtifaktElement-Regular" size="14.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <Text fx:id="max_temp5" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="max">
+                                             <font>
+                                                <Font name="ArtifaktElement-Regular" size="14.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                       <children>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Min:">
+                                             <font>
+                                                <Font name="ArtifaktElement-Regular" size="14.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <Text fx:id="min_temp5" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="min">
+                                             <font>
+                                                <Font name="ArtifaktElement-Regular" size="14.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </HBox>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Sunrise:" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="14.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="25.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Sunset:" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="14.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="25.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text fx:id="sunrise_time5" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="sunrise" wrappingWidth="48.66400146484375" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="14.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="25.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text fx:id="sunset_time5" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="sunset" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="14.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="25.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                 </children>
+                              </GridPane>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="250.0" prefWidth="180.0" style="-fx-background-color: #1f1f1f9d; -fx-background-radius: 30;">
+                           <children>
+                              <ImageView fx:id="weather_icon6" fitHeight="80.0" fitWidth="80.0" layoutX="50.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" />
+                              <VBox alignment="CENTER" prefHeight="91.0" prefWidth="180.0">
+                                 <children>
+                                    <Text fx:id="day_text6" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Day">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="25.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                    <Text fx:id="date_text6" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="18.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                              <GridPane alignment="CENTER_RIGHT" layoutY="160.0" prefHeight="90.0" prefWidth="180.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Max:">
+                                             <font>
+                                                <Font name="ArtifaktElement-Regular" size="14.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <Text fx:id="max_temp6" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="max">
+                                             <font>
+                                                <Font name="ArtifaktElement-Regular" size="14.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                       <children>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Min:">
+                                             <font>
+                                                <Font name="ArtifaktElement-Regular" size="14.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <Text fx:id="min_temp6" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="min">
+                                             <font>
+                                                <Font name="ArtifaktElement-Regular" size="14.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </HBox>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Sunrise:" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="14.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="25.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Sunset:" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="14.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="25.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text fx:id="sunrise_time6" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="sunrise" wrappingWidth="48.66400146484375" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="14.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="25.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text fx:id="sunset_time6" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="sunset" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="14.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="25.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                 </children>
+                              </GridPane>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="250.0" prefWidth="180.0" style="-fx-background-color: #1f1f1f9d; -fx-background-radius: 30;">
+                           <children>
+                              <ImageView fx:id="weather_icon7" fitHeight="80.0" fitWidth="80.0" layoutX="50.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" />
+                              <VBox alignment="CENTER" prefHeight="91.0" prefWidth="180.0">
+                                 <children>
+                                    <Text fx:id="day_text7" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Day">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="25.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                    <Text fx:id="date_text7" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="18.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                              <GridPane alignment="CENTER_RIGHT" layoutY="160.0" prefHeight="90.0" prefWidth="180.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Max:">
+                                             <font>
+                                                <Font name="ArtifaktElement-Regular" size="14.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <Text fx:id="max_temp7" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="max">
+                                             <font>
+                                                <Font name="ArtifaktElement-Regular" size="14.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                       <children>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Min:">
+                                             <font>
+                                                <Font name="ArtifaktElement-Regular" size="14.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <Text fx:id="min_temp7" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="min">
+                                             <font>
+                                                <Font name="ArtifaktElement-Regular" size="14.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </HBox>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Sunrise:" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="14.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="25.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Sunset:" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="14.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="25.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text fx:id="sunrise_time7" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="sunrise" wrappingWidth="48.66400146484375" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="14.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="25.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text fx:id="sunset_time7" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="sunset" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="14.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="25.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                 </children>
+                              </GridPane>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="250.0" prefWidth="180.0" style="-fx-background-color: #1f1f1f9d; -fx-background-radius: 30;">
+                           <children>
+                              <ImageView fx:id="weather_icon8" fitHeight="80.0" fitWidth="80.0" layoutX="50.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" />
+                              <VBox alignment="CENTER" prefHeight="91.0" prefWidth="180.0">
+                                 <children>
+                                    <Text fx:id="day_text8" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Day">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="25.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                    <Text fx:id="date_text8" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="18.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                              <GridPane alignment="CENTER_RIGHT" layoutY="160.0" prefHeight="90.0" prefWidth="180.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Max:">
+                                             <font>
+                                                <Font name="ArtifaktElement-Regular" size="14.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <Text fx:id="max_temp8" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="max">
+                                             <font>
+                                                <Font name="ArtifaktElement-Regular" size="14.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                       <children>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Min:">
+                                             <font>
+                                                <Font name="ArtifaktElement-Regular" size="14.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <Text fx:id="min_temp8" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="min">
+                                             <font>
+                                                <Font name="ArtifaktElement-Regular" size="14.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </HBox>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Sunrise:" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="14.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="25.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Sunset:" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="14.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="25.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text fx:id="sunrise_time8" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="sunrise" wrappingWidth="48.66400146484375" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="14.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="25.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text fx:id="sunset_time8" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="sunset" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="14.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="25.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                 </children>
+                              </GridPane>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="250.0" prefWidth="180.0" style="-fx-background-color: #1f1f1f9d; -fx-background-radius: 30;">
+                           <children>
+                              <ImageView fx:id="weather_icon9" fitHeight="80.0" fitWidth="80.0" layoutX="50.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" />
+                              <VBox alignment="CENTER" prefHeight="91.0" prefWidth="180.0">
+                                 <children>
+                                    <Text fx:id="day_text9" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Day">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="25.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                    <Text fx:id="date_text9" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="18.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                              <GridPane alignment="CENTER_RIGHT" layoutY="160.0" prefHeight="90.0" prefWidth="180.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Max:">
+                                             <font>
+                                                <Font name="ArtifaktElement-Regular" size="14.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <Text fx:id="max_temp9" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="max">
+                                             <font>
+                                                <Font name="ArtifaktElement-Regular" size="14.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                       <children>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Min:">
+                                             <font>
+                                                <Font name="ArtifaktElement-Regular" size="14.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <Text fx:id="min_temp9" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="min">
+                                             <font>
+                                                <Font name="ArtifaktElement-Regular" size="14.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </HBox>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Sunrise:" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="14.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="25.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Sunset:" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="14.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="25.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text fx:id="sunrise_time9" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="sunrise" wrappingWidth="48.66400146484375" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="14.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="25.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text fx:id="sunset_time9" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="sunset" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="14.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="25.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                 </children>
+                              </GridPane>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="250.0" prefWidth="180.0" style="-fx-background-color: #1f1f1f9d; -fx-background-radius: 30;">
+                           <children>
+                              <ImageView fx:id="weather_icon10" fitHeight="80.0" fitWidth="80.0" layoutX="50.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" />
+                              <VBox alignment="CENTER" prefHeight="91.0" prefWidth="180.0">
+                                 <children>
+                                    <Text fx:id="day_text10" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Day">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="25.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                    <Text fx:id="date_text10" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="18.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                              <GridPane alignment="CENTER_RIGHT" layoutY="160.0" prefHeight="90.0" prefWidth="180.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Max:">
+                                             <font>
+                                                <Font name="ArtifaktElement-Regular" size="14.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <Text fx:id="max_temp10" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="max">
+                                             <font>
+                                                <Font name="ArtifaktElement-Regular" size="14.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                       <children>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Min:">
+                                             <font>
+                                                <Font name="ArtifaktElement-Regular" size="14.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                             </HBox.margin>
+                                          </Text>
+                                          <Text fx:id="min_temp10" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="min">
+                                             <font>
+                                                <Font name="ArtifaktElement-Regular" size="14.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </HBox>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Sunrise:" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="14.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="25.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Sunset:" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="14.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="25.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text fx:id="sunrise_time10" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="sunrise" wrappingWidth="48.66400146484375" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="14.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="25.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                    <Text fx:id="sunset_time10" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="sunset" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="ArtifaktElement-Regular" size="14.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="25.0" />
+                                       </GridPane.margin>
+                                    </Text>
+                                 </children>
+                              </GridPane>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
+               </content>
+            </ScrollPane>
+            <AnchorPane layoutX="141.0" layoutY="729.0" prefHeight="250.0" prefWidth="180.0" style="-fx-background-color: #1f1f1fbd; -fx-background-radius: 30;">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="254.0" prefWidth="180.0">
+                     <children>
+                        <Text fx:id="day_text" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Day">
+                           <font>
+                              <Font name="ArtifaktElement-Regular" size="25.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="-50.0" />
+                           </VBox.margin>
+                        </Text>
+                        <Text fx:id="curr_date_text" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
+                           <font>
+                              <Font name="ArtifaktElement-Regular" size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="50.0" />
+                           </VBox.margin>
+                        </Text>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Hourly &gt;&gt;">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <Button fx:id="hourly_button" layoutX="141.0" layoutY="729.0" mnemonicParsing="false" prefHeight="250.0" prefWidth="180.0" style="-fx-background-color: transparent; -fx-background-radius: 30;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Pane layoutX="763.0" layoutY="1002.0" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #1f1f1f9d; -fx-background-radius: 18;" />
+            <Pane layoutX="835.0" layoutY="1002.0" prefHeight="35.0" prefWidth="35.0" style="-fx-background-color: #1f1f1f9d; -fx-background-radius: 18;" />
+            <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="761.0" layoutY="1002.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icons8-chevron-left-50.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="837.0" layoutY="1002.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icons8-chevron-right-50.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="scroll_backward" layoutX="763.0" layoutY="1002.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-radius: 18; -fx-background-color: transparent;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="scroll_forward" layoutX="835.0" layoutY="1002.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-radius: 18; -fx-background-color: transparent;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <GridPane alignment="TOP_CENTER" layoutX="1302.0" layoutY="395.0" prefHeight="642.0" prefWidth="530.0" style="-fx-background-color: #1f1f1f79; -fx-background-radius: 50;">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label alignment="TOP_CENTER" text="Wind" textFill="WHITE">
+                           <font>
+                              <Font name="Cambria" size="40.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="25.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Text fx:id="wind_speed" fill="WHITE" opacity="0.8" strokeType="OUTSIDE" strokeWidth="0.0" text="Speed">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Text>
+                        <Text fx:id="wind_direction" fill="WHITE" opacity="0.8" strokeType="OUTSIDE" strokeWidth="0.0" text="Direction">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Text>
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+                     <children>
+                        <Label alignment="TOP_CENTER" text="Precipitation" textFill="WHITE">
+                           <font>
+                              <Font name="Cambria" size="40.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="25.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Text fx:id="precipitation_type" fill="WHITE" opacity="0.8" strokeType="OUTSIDE" strokeWidth="0.0" text="Type">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Text>
+                        <Text fx:id="precipitation_probability" fill="WHITE" opacity="0.8" strokeType="OUTSIDE" strokeWidth="0.0" text="Probability">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Text>
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+                     <children>
+                        <Label alignment="TOP_CENTER" text="Humidity" textFill="WHITE">
+                           <font>
+                              <Font name="Cambria" size="40.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="25.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Text fx:id="humidity_percentage" fill="WHITE" opacity="0.8" strokeType="OUTSIDE" strokeWidth="0.0" text="Percentage">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Text>
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <children>
+                        <Label alignment="TOP_CENTER" text="Pressure" textFill="WHITE">
+                           <font>
+                              <Font name="Cambria" size="40.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="25.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Text fx:id="pressure" fill="WHITE" opacity="0.8" strokeType="OUTSIDE" strokeWidth="0.0" text="Pressure">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Text>
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
+                     <children>
+                        <Label alignment="TOP_CENTER" text="UV Index" textFill="WHITE">
+                           <font>
+                              <Font name="Cambria" size="40.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="25.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Text fx:id="uv_index" fill="WHITE" opacity="0.8" strokeType="OUTSIDE" strokeWidth="0.0" text="Level">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Text>
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="144.0" prefWidth="265.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <children>
+                        <Label alignment="TOP_CENTER" text="Visibility" textFill="WHITE">
+                           <font>
+                              <Font name="Cambria" size="40.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="25.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Text fx:id="visibility" fill="WHITE" opacity="0.8" strokeType="OUTSIDE" strokeWidth="0.0" text="Distance">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Text>
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="3">
+                     <children>
+                        <Label alignment="TOP_CENTER" text="Sunrise" textFill="WHITE">
+                           <font>
+                              <Font name="Cambria" size="40.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="25.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Text fx:id="sunrise" fill="WHITE" opacity="0.8" strokeType="OUTSIDE" strokeWidth="0.0" text="Time">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Text>
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <children>
+                        <Label alignment="TOP_CENTER" text="Sunset" textFill="WHITE">
+                           <font>
+                              <Font name="Cambria" size="40.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="25.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Text fx:id="sunset" fill="WHITE" opacity="0.8" strokeType="OUTSIDE" strokeWidth="0.0" text="Time">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Text>
+                     </children>
+                  </VBox>
+               </children>
+            </GridPane>
+            <Label layoutX="184.0" layoutY="30.0" text="Weather Forecast" textFill="WHITE">
+               <font>
+                  <Font name="Commercial Pi BT" size="200.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
